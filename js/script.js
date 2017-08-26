@@ -3,13 +3,13 @@ function TriangleChaos() {
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 
-	var x1 = 400-2.5;
+	var x1 = 400;
 	var y1 = 50;
 
-	var x2 = 100-2.5;
+	var x2 = 50;
 	var y2 = 750;
 
-	var x3 = 700-2.5;
+	var x3 = 750;
 	var y3 = 750;
 
 	var randX = Math.floor(Math.random() * 800) + 1 ;
@@ -89,7 +89,7 @@ function TriangleChaos() {
 	var strokeColor = "black";
 	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
 
-	for (var i = 0; i < 10000; i++) {
+	for (var i = 0; i < 100000; i++) {
 
 	
 
@@ -128,10 +128,10 @@ function TriangleChaos() {
 	newY = y;
 
 	ctx.beginPath();
-	ctx.arc(x, y,1,0,2*Math.PI);
+	ctx.arc(x, y,0.01,0,2*Math.PI);
 	ctx.stroke();
-	ctx.strokeStyle = strokeColor;
-	ctx.fillStyle = fillColor;
+	ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+	ctx.fillStyle = 'rgba(255,255,255,0.1)';
 	ctx.fill();
 	}
 	
@@ -221,6 +221,95 @@ function squareChaos() {
 			ctx.stroke();
 			ctx.strokeStyle = strokeColor;
 			ctx.fillStyle = fillColor;
+			ctx.fill();
+	}
+	
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////** SQUARE CHAOS **////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+function starChaos() {
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+
+	var x1 = 400;
+	var y1 = 30;
+
+	var x2 = 780;
+	var y2 = 306;
+
+	var x3 = 636;
+	var y3 = 753;
+
+	var x4 = 164;
+	var y4 = 753;
+
+	var x5 = 20;
+	var y5 = 306;
+
+	var randX = Math.floor(Math.random() * 800) + 1 ;
+	var randY = Math.floor(Math.random() * 800) + 1 ;
+
+
+
+	var newX = randX;
+	var newY = randY;
+	var fillColor = "black";
+	var strokeColor = "black";
+	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
+
+	for (var i = 0; i < 500000; i++) {
+
+			var randNum = Math.floor(Math.random() * 5) + 1 ;
+
+			ctx.fillStyle = "black";
+			
+
+
+			switch(randNum) {
+		    case 1:
+		        x = (newX + x1) / 2;
+		        y = (newY + y1) / 2;
+		        fillColor = "red";
+		        strokeColor = "red";
+		        break;
+		    case 2:
+		    	x = (newX + x2) / 2;
+		        y = (newY + y2) / 2;
+		        fillColor = "blue";
+		        strokeColor = "blue";
+		        break;
+		    case 3:
+		    	x = (newX + x3) / 2;
+		        y = (newY + y3) / 2;
+		        fillColor = "yellow";
+		        strokeColor = "yellow";
+		   		break;
+		    case 4:
+		    	x = (newX + x4) / 2;
+		        y = (newY + y4) / 2;
+		        fillColor = "green";
+		        strokeColor = "green";
+		   		break;
+	   		case 5:
+		    	x = (newX + x5) / 2;
+		        y = (newY + y5) / 2;
+		        fillColor = "magenta";
+		        strokeColor = "magenta";
+		   		break;
+		    default:
+		     
+			}
+
+			newX = x;
+			newY = y;
+
+			ctx.beginPath();
+			ctx.arc(x, y, 0.001,0,2*Math.PI);
+			ctx.stroke();
+			ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+			ctx.fillStyle = 'rgba(255,255,255,0.1)';
 			ctx.fill();
 	}
 	

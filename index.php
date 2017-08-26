@@ -16,14 +16,73 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Chaos Theory</h1>
+<h1 id="mainHeading">Chaos Theory</h1>
 
 <div id="canvasWrapper">
 <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
 
 <script type="text/javascript">
 //TriangleChaos(); 
- squareChaos(); 
+
+// squareChaos(); 
+ starChaos();
+	// var c = document.getElementById("myCanvas");
+	// var ctx = c.getContext("2d");
+
+// function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
+//   if (sides < 3) return;
+//   var a = (Math.PI * 2)/sides;
+//   a = anticlockwise?-a:a;
+//   ctx.save();
+//   ctx.translate(x,y);
+//   ctx.rotate(startAngle);
+//   ctx.moveTo(radius,0);
+//   for (var i = 1; i < sides; i++) {
+//     ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
+//   }
+//   ctx.closePath();
+//   ctx.restore();
+// }
+
+
+
+
+
+
+
+      // function writeMessage(canvas, message) {
+      //   var context = canvas.getContext('2d');
+      //   context.clearRect(0, 0, canvas.width, canvas.height);
+      //   context.font = '18pt Calibri';
+      //   context.fillStyle = 'black';
+      //   context.fillText(message, 10, 25);
+      // }
+      // function getMousePos(canvas, evt) {
+      //   var rect = canvas.getBoundingClientRect();
+      //   return {
+      //     x: evt.clientX - rect.left,
+      //     y: evt.clientY - rect.top
+      //   };
+      // }
+      // var canvas = document.getElementById('myCanvas');
+      // var context = canvas.getContext('2d');
+
+      // canvas.addEventListener('mousemove', function(evt) {
+      //   var mousePos = getMousePos(canvas, evt);
+      //   document.getElementById("mainHeading").innerHTML = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+      //   // console.log('Mouse position: ' + mousePos.x + ',' + mousePos.y);
+      //   //writeMessage(canvas, message);
+      // }, false);
+
+
+
+//       ctx.beginPath();
+// polygon(ctx,400,430,400,5,-Math.PI/2);
+// ctx.fillStyle="rgba(227,11,93,0.75)";
+// ctx.fill();
+// ctx.stroke();
+
+
 </script>
 </canvas>
 </div>
