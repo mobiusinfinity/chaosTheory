@@ -22,7 +22,7 @@
 <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
 
 <script type="text/javascript">
-//triangleChaos(); 
+// triangleChaos(); 
 
  //squareChaos(); 
 // starChaos();
@@ -32,49 +32,56 @@
 // ninChaos();
  //decChaos();
 //elevChaos();
-twelvChaos();
+//twelvChaos();
 
-	// var c = document.getElementById("myCanvas");
-	// var ctx = c.getContext("2d");
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
 
-	// function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
-	//   if (sides < 3) return;
-	//   var a = (Math.PI * 2)/sides;
-	//   a = anticlockwise?-a:a;
-	//   ctx.save();
-	//   ctx.translate(x,y);
-	//   ctx.rotate(startAngle);
-	//   ctx.moveTo(radius,0);
-	//   for (var i = 1; i < sides; i++) {
-	//     ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
-	//   }
-	//   ctx.closePath();
-	//   ctx.restore();
-	// }
+	function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
+	  if (sides < 3) return;
+	  var a = (Math.PI * 2)/sides;
+	  a = anticlockwise?-a:a;
+	  ctx.save();
+	  ctx.translate(x,y);
+	  ctx.rotate(startAngle);
+	  ctx.moveTo(radius,0);
+	  for (var i = 1; i < sides; i++) {
+	    ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
+	  }
+	  ctx.closePath();
+	  ctx.restore();
+	}
 
- //      function writeMessage(canvas, message) {
- //        var context = canvas.getContext('2d');
- //        context.clearRect(0, 0, canvas.width, canvas.height);
- //        context.font = '18pt Calibri';
- //        context.fillStyle = 'black';
- //        context.fillText(message, 10, 25);
- //      }
- //      function getMousePos(canvas, evt) {
- //        var rect = canvas.getBoundingClientRect();
- //        return {
- //          x: evt.clientX - rect.left,
- //          y: evt.clientY - rect.top
- //        };
- //      }
- //      var canvas = document.getElementById('myCanvas');
- //      var context = canvas.getContext('2d');
+      function writeMessage(canvas, message) {
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = '18pt Calibri';
+        context.fillStyle = 'black';
+        context.fillText(message, 10, 25);
+      }
+      function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
 
- //      canvas.addEventListener('mousemove', function(evt) {
- //        var mousePos = getMousePos(canvas, evt);
- //        document.getElementById("mainHeading").innerHTML = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
- //        // console.log('Mouse position: ' + mousePos.x + ',' + mousePos.y);
- //        //writeMessage(canvas, message);
- //      }, false);
+      canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+        document.getElementById("mainHeading").innerHTML = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+        // console.log('Mouse position: ' + mousePos.x + ',' + mousePos.y);
+        //writeMessage(canvas, message);
+      }, false);
+  triangleChaos(); 
+      //// triangle
+  //       ctx.beginPath();
+		// polygon(ctx,400,500,450,3,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,11,93,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
 
 
 //// pentagon

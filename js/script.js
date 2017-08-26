@@ -6,11 +6,14 @@ function triangleChaos() {
 	var x1 = 400;
 	var y1 = 50;
 
-	var x2 = 50;
-	var y2 = 750;
+	var x2 = 10;
+	var y2 = 725;
 
-	var x3 = 750;
-	var y3 = 750;
+	var x3 = 790;
+	var y3 = 725;
+
+	var x4 = 400;
+	var y4 = 500;
 
 	var randX = Math.floor(Math.random() * 800) + 1 ;
 	var randY = Math.floor(Math.random() * 800) + 1 ;
@@ -24,55 +27,49 @@ function triangleChaos() {
 
 	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
 	ctx.fillStyle = "black";
+	var alpha = 0.5;
 
-	for (var i = 0; i < 1000000; i++) {
+	for (var i = 0; i < 10000000; i++) {
 
-	
-
-	var randNum = Math.floor(Math.random() * 3) + 1 ;
-
-	// var x = 0.0;
-	// var y = 0.0;
-	
-	
-
+	var randNum = Math.floor(Math.random() * 4) + 1 ;
 
 	switch(randNum) {
     case 1:
         x = (newX + x1) / 2;
         y = (newY + y1) / 2;
-        fillColor = "red";
-        strokeColor = "red";
+        fillColor = "rgba(255,0,0," + alpha +")";
+        strokeColor = "rgba(255,0,0," + alpha +")";
         break;
     case 2:
     	x = (newX + x2) / 2;
         y = (newY + y2) / 2;
-        fillColor = "blue";
-        strokeColor = "blue";
+        fillColor = "rgba(255,255,0," + alpha +")";
+        strokeColor = "rgba(255,255,0," + alpha +")";
         break;
     case 3:
     	x = (newX + x3) / 2;
         y = (newY + y3) / 2;
-        fillColor = "yellow";
-        strokeColor = "yellow";
+        fillColor = "rgba(0,0,255," + alpha +")";
+        strokeColor = "rgba(0,0,255," + alpha +")";
    		break;
-    default:
-     
+    case 4:
+    	x = (newX + x4) / 2;
+        y = (newY + y4) / 2;
+        fillColor = "rgba(255,255,255," + alpha +")";
+        strokeColor = "rgba(255,255,255," + alpha +")";
+   		break;
 	}
 
 	newX = x;
 	newY = y;
 
 	ctx.beginPath();
-	ctx.arc(x, y,0.1,0,2*Math.PI);
+	ctx.arc(x, y,1,0,2*Math.PI);
 	ctx.stroke();
 	ctx.strokeStyle = strokeColor;
 	ctx.fillStyle = fillColor;
 	ctx.fill();
 	}
-
-	
-
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////** SQUARE CHAOS **////////////////////////////////////////
@@ -106,45 +103,43 @@ function squareChaos() {
 	var fillColor = "black";
 	var strokeColor = "black";
 	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
+	var alpha = 0.05;
 
-	for (var i = 0; i < 100000; i++) {
+	for (var i = 0; i < 100000000; i++) {
 
 			var randNum = Math.floor(Math.random() * 5) + 1 ;
-
-			ctx.fillStyle = "black";
-			
 
 
 			switch(randNum) {
 		    case 1:
 		        x = (newX + x1) / 2;
 		        y = (newY + y1) / 2;
-		        fillColor = "red";
-		        strokeColor = "red";
+		        fillColor = "rgba(255,0,0," + alpha +")";
+		        strokeColor = "rgba(255,0,0," + alpha +"1)";
 		        break;
 		    case 2:
 		    	x = (newX + x2) / 2;
 		        y = (newY + y2) / 2;
-		        fillColor = "blue";
-		        strokeColor = "blue";
+		        fillColor = "rgba(0,255,0," + alpha +")";
+		        strokeColor = "rgba(0,255,0," + alpha +")";
 		        break;
 		    case 3:
 		    	x = (newX + x3) / 2;
 		        y = (newY + y3) / 2;
-		        fillColor = "yellow";
-		        strokeColor = "yellow";
+		        fillColor = "rgba(0,0,255," + alpha +")";
+		        strokeColor = "rgba(0,0,255," + alpha +")";
 		   		break;
 		    case 4:
 		    	x = (newX + x4) / 2;
 		        y = (newY + y4) / 2;
-		        fillColor = "green";
-		        strokeColor = "green";
+		        fillColor = "rgba(255,255,0," + alpha +")";
+		        strokeColor = "rgba(255,255,0," + alpha +")";
 		   		break;
 	   		case 5:
 		    	x = (newX + x5) / 2;
 		        y = (newY + y5) / 2;
-		        fillColor = "magenta";
-		        strokeColor = "magenta";
+  				fillColor = "rgba(255,0,255," + alpha +")";
+		        strokeColor = "rgba(255,0,255," + alpha +")";
 		   		break;
 		    default:
 		     
@@ -154,10 +149,13 @@ function squareChaos() {
 			newY = y;
 
 			ctx.beginPath();
-			ctx.arc(x, y,0.01,0,2*Math.PI);
+			ctx.arc(x, y,0.05,0,2*Math.PI);
 			ctx.stroke();
-			ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-			ctx.fillStyle = 'rgba(255,255,255,0.1)';
+			ctx.strokeStyle = strokeColor;
+			ctx.fillStyle = fillColor;
+
+			// ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+			// ctx.fillStyle = 'rgba(255,255,255,0.1)';
 			ctx.fill();
 	}
 	
@@ -196,13 +194,9 @@ function starChaos() {
 	var strokeColor = "black";
 	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
 	
-	for (var i = 0; i < 5000000; i++) {
+	for (var i = 0; i < 10000000; i++) {
 
 			var randNum = Math.floor(Math.random() * 5) + 1 ;
-
-		
-			
-
 
 			switch(randNum) {
 		    case 1:
@@ -235,7 +229,7 @@ function starChaos() {
 		        fillColor = "rgba(255,0,255,0.05)";
 		        strokeColor = "rgba(255,0,255,0.05)";
 		   		break;
-		    default:
+
 		     
 			}
 
@@ -243,10 +237,12 @@ function starChaos() {
 			newY = y;
 
 			ctx.beginPath();
-			ctx.arc(x, y, 0.5,0,2*Math.PI);
+			ctx.arc(x, y,0.2,0,2*Math.PI);
 			ctx.stroke();
 			ctx.strokeStyle = strokeColor;
 			ctx.fillStyle = fillColor;
+	        // ctx.fillStyle = "rgba(255,255,255,0.2)";
+	        // ctx.strokeStyle = "rgba(255,255,255,0.2)";
 			ctx.fill();
 	}
 	
@@ -996,6 +992,8 @@ function twelvChaos() {
 	for (var i = 0; i < 10000000; i++) {
 
 			var randNum = Math.floor(Math.random() * 12) + 1 ;
+
+
 
 			switch(randNum) {
 		    case 1:
