@@ -21,7 +21,10 @@
 <div id="canvasWrapper">
 <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
 
-<script type="text/javascript">drawLine(); </script>
+<script type="text/javascript">
+//TriangleChaos(); 
+ squareChaos(); 
+</script>
 </canvas>
 </div>
 </body>
