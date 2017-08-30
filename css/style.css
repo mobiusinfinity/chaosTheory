@@ -1,12 +1,78 @@
-h1 {
-	text-align: center;
-}
 #canvasWrapper {
 	display: block;
-	width: 800px;
+	width: 50%;
 	margin: 0 auto;
 	padding: 0;
 	float: none;
 	/*background-color:*/
 
+}
+
+#myCanvas {
+	background-color: black;
+}
+
+
+
+#variableContainer {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	/*float: left;*/
+	/*background-color: red;*/
+	padding: 10px 200px;
+}
+
+input {
+	width: 100%;
+}
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    float: left !important;
+    width: 15px;
+    padding: 0;
+}
+table td {
+	padding: 5px;
+	text-align: right;
+}
+
+#download button {
+	width: 100%;
+}
+/*#loader {
+	display: none;
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    z-index: 400;
+}
+*/
+/*@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+*/
+/*#variableContainer label {
+	float: left;
+	margin: 0;
+}
+
+#variableContainer tr td {
+	width: 10%;
+	float: left;
+	margin: 0;
+	text-align: left;
+}
+*/
+
+
+
+@media (min-width: 768px) & (max-width: 850px) {
+	.container {
+	    max-width: 850px !important;
+	}
 }
