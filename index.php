@@ -98,6 +98,25 @@
 					    <td><input id="hex6" type="color" value="#ffff00" /></td>
 					  </tr>
 
+	  		  		  <tr class="colors">
+					    <td>Color 7: </td>
+					    <td><input id="hex7" type="color" value="#ff0000" /></td>
+					    <td>Color 8: </td>
+					    <td><input id="hex8" type="color" value="#ff00ff" /></td>
+					  </tr>
+			  		  <tr  class="colors">
+					    <td>Color 9: </td>
+					    <td><input id="hex9" type="color" value="#0000ff" /></td>
+					    <td>Color 10: </td>
+					    <td><input id="hex10" type="color" value="#00ffff" /></td>
+					  </tr>
+					  <tr  class="colors">
+					    <td>Color 11: </td>
+					    <td><input id="hex11" type="color" value="#00ff00" /></td>
+					    <td>Color 12: </td>
+					    <td><input id="hex12" type="color" value="#ffff00" /></td>
+					  </tr>
+
  					 <tr>
 					    <td>Shape: </td>
 					    <td><select id="shape" style="width: 100%;">
@@ -106,16 +125,16 @@
 						  <option value="Square">Square</option>
 						  <option value="Pentagon">Pentagon</option>
 						  <option value="Hexagon">Hexagon</option>
+
+					  	  <option value="Heptagon">Heptagon</option>
+						  <option value="Octagon">Octagon</option>
+						  <option value="Nonagon">Nonagon</option>
+						  <option value="Decagon">Decagon</option>
+						  <option value="Hendecagon">Hendecagon</option>
+						  <option value="Dodecagon">Dodecagon</option>
 						</select></td>
-						<td>Points: </td>
-						<script type="text/javascript">
-							var optionA = "3";
-							var optionB = "4";
-						</script>
-					    <td><select style="width: 100%;">
-					   	  <option value="OptionA">3</option>
-						  <option value="OptionB">4</option>
-						</select></td>
+						<td>Center Dot: </td>
+						<td><input id="centerDot" type="checkbox" checked /></td>
 					  </tr>
 
 					  <tr>
