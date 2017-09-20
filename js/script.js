@@ -1,33 +1,30 @@
-
+var stop = false;
 function multiChaos() {
+stop = false;
+	// This 
 
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 
+
+	// This just Sets the background to black at the begining of the function
+	// This also acts as a way to cleat the screen
 	var fillColor = "black";
 	ctx.fillStyle = "black";
-
-	
-
 	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
 
-	//ctx.restore();
+	// numCoords is just the amount of coordinate points there are for that shape chosen
+	var numCoords = 3;
 
-	var diceSides = 3;
-
-
+	// Setting the settings viarables to their defaults
 	var color = document.getElementById("color").checked;
-
 	var shapes = document.getElementById("shape");
 	var shape = shapes.options[shapes.selectedIndex].value;
-
 	var centreDot = document.getElementById("centerDot").checked;
-	
-
 	var numDots = document.getElementById("number").value;
 	var sizeDots = document.getElementById("size").value;
 	var alpha = document.getElementById("opacity").value;
-	// var numPoints = document.getElementById("points").value;
+	/////// var numPoints = document.getElementById("points").value;
 
 
 	var hex1 = document.getElementById("hex1").value;
@@ -201,12 +198,12 @@ function multiChaos() {
 
 
 
-	var diceSides;
+	var numCoords;
 
 	switch(shape) {
     case "Circle":
 
-  	// 		var diceSides = 1;
+  	// 		var numCoords = 1;
 
 			// var x1 = 400;
 			// var y1 = 400;
@@ -218,7 +215,7 @@ function multiChaos() {
     		
         break;
     case "Triangle":
-    		var diceSides = 3;
+    		var numCoords = 3;
 
 			var x1 = 400;
 			var y1 = 50;
@@ -239,7 +236,7 @@ function multiChaos() {
 
         break;
     case "Square":
-			var diceSides = 4;
+			var numCoords = 4;
 
 	    	var x1 = 50;
 			var y1 = 50 ;
@@ -260,7 +257,7 @@ function multiChaos() {
 		
    		break;
     case "Pentagon":
-			var diceSides = 5;
+			var numCoords = 5;
 
 	    	var x1 = 400;
 			var y1 = 30;
@@ -285,7 +282,7 @@ function multiChaos() {
 		
    		break;
     case "Hexagon":
-    		var diceSides = 6;
+    		var numCoords = 6;
 	    	var x1 = 400;
 			var y1 = 20;
 
@@ -312,7 +309,7 @@ function multiChaos() {
 		
    		break;
     case "Heptagon":
-    		var diceSides = 7;
+    		var numCoords = 7;
 			var x1 = 400;
 			var y1 = 30;
 
@@ -341,7 +338,7 @@ function multiChaos() {
 		
    		break;
     case "Octagon":
-    		var diceSides = 8;
+    		var numCoords = 8;
 			var x1 = 400;
 			var y1 = 20;
 
@@ -373,7 +370,7 @@ function multiChaos() {
 			}
    		break;
     case "Nonagon":
-    		var diceSides = 9;
+    		var numCoords = 9;
     		var x1 = 400;
 			var y1 = 20;
 
@@ -412,7 +409,7 @@ function multiChaos() {
 
    		break;
     case "Decagon":
-    		var diceSides = 10;
+    		var numCoords = 10;
     		var x1 = 400;
 			var y1 = 20;
 
@@ -451,7 +448,7 @@ function multiChaos() {
 	
    		break;
     case "Hendecagon":
-    		var diceSides = 11;
+    		var numCoords = 11;
     		var x1 = 400;
 			var y1 = 20;
 
@@ -494,7 +491,7 @@ function multiChaos() {
 	
    		break;
     case "Dodecagon":
-    		var diceSides = 12;
+    		var numCoords = 12;
     		var x1 = 400;
 			var y1 = 20;
 
@@ -541,7 +538,7 @@ function multiChaos() {
 	}
 
 	if (centreDot == true) {
-		diceSides++;
+		numCoords++;
 	}
 
 	// generate two random numbers for the initial dot position
@@ -557,8 +554,11 @@ function multiChaos() {
 
 	//for (var i = 0; i < numDots; i++) {
 	function drawDots() {
+		if (stop == true) {
+			return;
+		}
 
-			var randNum = Math.floor(Math.random() * diceSides) + 1 ;
+			var randNum = Math.floor(Math.random() * numCoords) + 1 ;
 
 			switch(randNum) {
 		    case 1:
@@ -651,7 +651,7 @@ function multiChaos() {
 
 
 
-			if (sizeDots <= 1) {
+			if (sizeDots < 1) {
 
 
 
@@ -712,11 +712,16 @@ function multiChaos() {
 	// }
 
 	
-}
+};
 
-//window.onload  =  multiChaos();
 
-//setInterval(multiChaos, 100000)
+
+function stopFunc() {
+ stop = true;
+};
+
+
+/////setInterval(multiChaos, 100000)
 
 	window.onload =  function onloadFunction() {
 
