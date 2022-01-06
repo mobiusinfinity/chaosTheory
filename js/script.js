@@ -435,9 +435,7 @@ stop = false;
 
 	//for (var i = 0; i < numDots; i++) {
 	function drawDots() {
-		if (stop == true) {
-			return;
-		}
+		if (stop == true) {	return; }
 
 			var randNum = Math.floor(Math.random() * numCoords) + 1 ;
 
@@ -590,7 +588,7 @@ stop = false;
 
 		drawDots();
 		setInterval(drawDots, 0.1);
-	// }
+
 
 	
 };
