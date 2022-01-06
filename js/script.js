@@ -8,7 +8,7 @@ stop = false;
 
 
 	// This just Sets the background to black at the begining of the function
-	// This also acts as a way to cleat the screen
+	// This also acts as a way to clear the screen
 	var fillColor = "black";
 	ctx.fillStyle = "black";
 	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
@@ -74,25 +74,22 @@ stop = false;
 
 
        pointColors[i]  = "rgba(" + r[i] +"," + g[i] +"," + b[i] +"," + alpha +")";
-
-
     }
-
 
 	var numCoords;
 
 	switch(shape) {
     case "Circle":
 
-  	// 		var numCoords = 1;
+  		var numCoords = 1;
 
-			// var x1 = 400;
-			// var y1 = 400;
+			var x1 = 400;
+			var y1 = 400;
 
-			// if (centreDot == true) {
-			// 	var x1 = 400;
-			// 	var y1 = 400;
-			// }
+			if (centreDot == true) {
+				var x1 = 400;
+				var y1 = 400;
+			}
     		
         break;
     case "Triangle":
@@ -526,13 +523,7 @@ stop = false;
 			newX = x;
 			newY = y;
 
-
-
-
-
 			if (sizeDots < 1) {
-
-
 
 				// use this code to draw small dots less than 1px
 				// it draws lines from point a to b not dots
@@ -552,17 +543,10 @@ stop = false;
 				ctx.moveTo(x, y);
 				ctx.lineTo(x+0.1,y+0.1);
 
-
 				ctx.lineWidth = sizeDots;
-				
-
 				ctx.stroke();
 
-				//ctx.save();
-
 			} else {
-
-				//ctx.restore();
 
 				//Use this code to draw circles - better for big dots, more resourse intensive
 				ctx.beginPath();
