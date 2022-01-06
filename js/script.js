@@ -589,10 +589,7 @@ stop = false;
 		drawDots();
 		setInterval(drawDots, 0.1);
 
-
-	
 };
-
 
 
 function stopFunc() {
