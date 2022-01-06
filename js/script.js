@@ -1,7 +1,7 @@
 var stop = false;
+
 function multiChaos() {
 stop = false;
-	// This 
 
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
@@ -42,160 +42,41 @@ stop = false;
 	var hex11 = document.getElementById("hex11").value;
 	var hex12 = document.getElementById("hex12").value;
 
-			    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+	var hexColors = [hex1, hex2, hex3, hex4, hex5, hex6, hex7, hex8, hex9, hex10, hex11, hex12];
 
-			    hex1 = hex1.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
+	var result = 0;
+	var r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12 = 0;
+	var r = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12];
 
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex1);
-			    // return result ? {
-		       var r1 = parseInt(result[1], 16);
-		       var g1 = parseInt(result[2], 16);
-		       var b1 = parseInt(result[3], 16);
+	var g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12= 0;
+	var g = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12];
 
-			    hex2 = hex2.replace(shorthandRegex, function(m, r, g, b) {
-		       		 return r + r + g + g + b + b;
-			    });
+	var b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12 = 0;
+	var b = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12];
 
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex2);
-			
-		       var r2 = parseInt(result[1], 16);
-		       var g2 = parseInt(result[2], 16);
-		       var b2 = parseInt(result[3], 16);
+	var pointColor1, pointColor2, pointColor3, pointColor4, pointColor5, pointColor6, pointColor7, pointColor8, pointColor9, pointColor10, pointColor11, pointColor12;
+	var pointColors = [pointColor1, pointColor2, pointColor3, pointColor4, pointColor5, pointColor6, pointColor7, pointColor8, pointColor9, pointColor10, pointColor11, pointColor12];
 
 
-   			    hex3 = hex3.replace(shorthandRegex, function(m, r, g, b) {
-		       		return r + r + g + g + b + b;
-			    });
+  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex3);
-		
-		       var r3 = parseInt(result[1], 16);
-		       var g3 = parseInt(result[2], 16);
-		       var b3 = parseInt(result[3], 16);
+		for(var i = 0; i < hexColors.length; i++) {
 
+	    hexColors[i] = hexColors[i].replace(shorthandRegex, function(m, r, g, b) {
+	        return r + r + g + g + b + b;
+	    });
 
-
-   			    hex4 = hex4.replace(shorthandRegex, function(m, r, g, b) {
-	       			return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex4);
-	
-			       var r4 = parseInt(result[1], 16);
-			       var g4 = parseInt(result[2], 16);
-			       var b4 = parseInt(result[3], 16);
+	    result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColors[i]);
+	    // return result ? {
+       r[i] = parseInt(result[1], 16);
+       g[i] = parseInt(result[2], 16);
+       b[i] = parseInt(result[3], 16);
 
 
-
-  			    hex5 = hex5.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex5);
-			 
-			       var r5 = parseInt(result[1], 16);
-			       var g5 = parseInt(result[2], 16);
-			       var b5 = parseInt(result[3], 16);
+       pointColors[i]  = "rgba(" + r[i] +"," + g[i] +"," + b[i] +"," + alpha +")";
 
 
-			    hex6 = hex6.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex6);
-			
-		       var r6 = parseInt(result[1], 16);
-		       var g6 = parseInt(result[2], 16);
-		       var b6 = parseInt(result[3], 16);
-
-			    hex7 = hex7.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex7);
-			
-		       var r7 = parseInt(result[1], 16);
-		       var g7 = parseInt(result[2], 16);
-		       var b7 = parseInt(result[3], 16);
-
-
-			    hex8 = hex8.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex8);
-			
-			       var r8 = parseInt(result[1], 16);
-			       var g8 = parseInt(result[2], 16);
-			       var b8 = parseInt(result[3], 16);
-
-			    hex9 = hex9.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex9);
-			
-			       var r9 = parseInt(result[1], 16);
-			       var g9 = parseInt(result[2], 16);
-			       var b9 = parseInt(result[3], 16);
-			 
-			    hex10 = hex10.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex10);
-			
-			       var r10 = parseInt(result[1], 16);
-			       var g10 = parseInt(result[2], 16);
-			       var b10 = parseInt(result[3], 16);
-
-			    hex11 = hex11.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex11);
-			
-			       var r11 = parseInt(result[1], 16);
-			       var g11= parseInt(result[2], 16);
-			       var b11 = parseInt(result[3], 16);
-
-
-			    hex12 = hex12.replace(shorthandRegex, function(m, r, g, b) {
-			        return r + r + g + g + b + b;
-			    });
-
-			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex12);
-			
-			       var r12 = parseInt(result[1], 16);
-			       var g12= parseInt(result[2], 16);
-			       var b12 = parseInt(result[3], 16);
-
-
-
-	var pointColor1 = "rgba(" + r1 +"," + g1 +"," + b1 +"," + alpha +")";
-	var pointColor2 = "rgba(" + r2 +"," + g2 +"," + b2 +"," + alpha +")";
-	var pointColor3 = "rgba(" + r3 +"," + g3 +"," + b3 +"," + alpha +")";
-	var pointColor4 = "rgba(" + r4 +"," + g4 +"," + b4 +"," + alpha +")";
-
-	var pointColor5 = "rgba(" + r5 +"," + g5 +"," + b5 +"," + alpha +")";
-	var pointColor6 = "rgba(" + r6 +"," + g6 +"," + b6 +"," + alpha +")";
-
-
-	var pointColor7 = "rgba(" + r7 +"," + g7 +"," + b7 +"," + alpha +")";
-	var pointColor8 = "rgba(" + r8 +"," + g8 +"," + b8 +"," + alpha +")";
-	var pointColor9 = "rgba(" + r9 +"," + g9 +"," + b9 +"," + alpha +")";
-	var pointColor10 = "rgba(" + r10 +"," + g10 +"," + b10 +"," + alpha +")";
-
-	var pointColor11 = "rgba(" + r11 +"," + g11 +"," + b11 +"," + alpha +")";
-	var pointColor12 = "rgba(" + r12 +"," + g12 +"," + b12 +"," + alpha +")";
-
-	// var pointColor1 = "rgba(255,0,0," + alpha +")";
-	// var pointColor2 = "rgba(0,255,0," + alpha +")";
-	// var pointColor3 = "rgba(0,0,255," + alpha +")";
-	// var pointColor4 = "rgba(255,255,255," + alpha +")";
-
+    }
 
 
 	var numCoords;
@@ -564,80 +445,80 @@ stop = false;
 		    case 1:
 		        x = (newX + x1) / 2;
 		        y = (newY + y1) / 2;
-		        fillColor = pointColor1;
-		        strokeColor = pointColor1;
+		        fillColor =   pointColors[0];
+		        strokeColor =   pointColors[0];
 		        break;
 		    case 2:
 		    	x = (newX + x2) / 2;
 		        y = (newY + y2) / 2;
-		        fillColor = pointColor2;
-		        strokeColor = pointColor2;
+		        fillColor =   pointColors[1];
+		        strokeColor =   pointColors[1];
 		        break;
 		    case 3:
 		    	x = (newX + x3) / 2;
 		        y = (newY + y3) / 2;
-		        fillColor = pointColor3;
-		        strokeColor = pointColor3;
+		        fillColor =   pointColors[2];
+		        strokeColor =   pointColors[2];
 		   		break;
 		    case 4:
 		    	x = (newX + x4) / 2;
 		        y = (newY + y4) / 2;
-		        fillColor = pointColor4;
-		        strokeColor = pointColor4;
+		        fillColor =   pointColors[3];
+		        strokeColor =   pointColors[3];
 		   		break;
 		    case 5:
 		    	x = (newX + x5) / 2;
 		        y = (newY + y5) / 2;
-		        fillColor = pointColor5;
-		        strokeColor = pointColor5;
+		        fillColor =   pointColors[4];
+		        strokeColor =   pointColors[4];
 		   		break;
 		    case 6:
 		    	x = (newX + x6) / 2;
 		        y = (newY + y6) / 2;
-		        fillColor = pointColor6;
-		        strokeColor = pointColor6;
+		        fillColor =   pointColors[5];
+		        strokeColor =   pointColors[5];
 		   		break;
 		    case 7:
 		        x = (newX + x7) / 2;
 		        y = (newY + y7) / 2;
-		        fillColor = pointColor7;
-		        strokeColor = pointColor7;
+		        fillColor =   pointColors[6];
+		        strokeColor =   pointColors[6];
 		        break;
 		    case 8:
 		    	x = (newX + x8) / 2;
 		        y = (newY + y8) / 2;
-		        fillColor = pointColor8;
-		        strokeColor = pointColor8;
+		        fillColor =   pointColors[7];
+		        strokeColor =   pointColors[7];
 		        break;
 		    case 9:
 		    	x = (newX + x9) / 2;
 		        y = (newY + y9) / 2;
-		        fillColor = pointColor9;
-		        strokeColor = pointColor9;
+		        fillColor =   pointColors[8];
+		        strokeColor =   pointColors[8];
 		   		break;
 		    case 10:
 		    	x = (newX + x10) / 2;
 		        y = (newY + y10) / 2;
-		        fillColor = pointColor10;
-		        strokeColor = pointColor10;
+		        fillColor =   pointColors[9];
+		        strokeColor =   pointColors[9];
 		   		break;
 		    case 11:
 		    	x = (newX + x11) / 2;
 		        y = (newY + y11) / 2;
-		        fillColor = pointColor11;
-		        strokeColor = pointColor11;
+		        fillColor =   pointColors[10];
+		        strokeColor =   pointColors[10];
 		   		break;
 		    case 12:
 		    	x = (newX + x12) / 2;
 		        y = (newY + y12) / 2;
-		        fillColor = pointColor12;
-		        strokeColor = pointColor12;
+		        fillColor =   pointColors[11];
+		        strokeColor =   pointColors[11];
 		   		break;
 		    case 13:
 		    	x = (newX + x13) / 2;
 		        y = (newY + y13) / 2;
-		        fillColor = pointColor12;
-		        strokeColor = pointColor12;
+		        fillColor =   pointColors[12];
+		        strokeColor =   pointColors[12];
 		   		break;
 			}
 
