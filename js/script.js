@@ -13,7 +13,7 @@ stop = false;
 	ctx.fillStyle = "black";
 	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
 
-	// numCoords is just the amount of coordinate points there are for that shape chosen
+	// numCoords is the amount of coordinate points there are for that shape chosen
 	var numCoords = 3;
 
 	// Setting the settings viarables to their defaults
@@ -72,28 +72,27 @@ stop = false;
        g[i] = parseInt(result[2], 16);
        b[i] = parseInt(result[3], 16);
 
-
        pointColors[i]  = "rgba(" + r[i] +"," + g[i] +"," + b[i] +"," + alpha +")";
     }
 
 	var numCoords;
 
 	switch(shape) {
+
     case "Circle":
 
-  		var numCoords = 1;
-
+  		var numCoords = 2;
 			var x1 = 400;
-			var y1 = 400;
+			var y1 = 0;
 
 			if (centreDot == true) {
-				var x1 = 400;
-				var y1 = 400;
+				var x2 = 400;
+				var y2 = 800;
 			}
-    		
-        break;
+    break;
+
     case "Triangle":
-    		var numCoords = 3;
+    	var numCoords = 3;
 
 			var x1 = 400;
 			var y1 = 50;
@@ -111,12 +110,12 @@ stop = false;
 				var x5 = 400;
 				var y5 = 400;
 			}
+    break;
 
-        break;
     case "Square":
 			var numCoords = 4;
 
-	    	var x1 = 50;
+	    var x1 = 50;
 			var y1 = 50 ;
 
 			var x2 = 750;
@@ -129,15 +128,15 @@ stop = false;
 			var y4 = 750;
 
 			if (centreDot == true) {
-				var x5 = 375;
-				var y5 = 375;
+				var x5 = 400;
+				var y5 = 400;
 			}
-		
-   		break;
+   	break;
+
     case "Pentagon":
 			var numCoords = 5;
 
-	    	var x1 = 400;
+	    var x1 = 400;
 			var y1 = 30;
 
 			var x2 = 780;
@@ -152,16 +151,16 @@ stop = false;
 			var x5 = 20;
 			var y5 = 306;
 
-
 			if (centreDot == true) {
 				var x6 = 400;
 				var y6 = 400;
 			}
-		
-   		break;
+   	break;
+
     case "Hexagon":
-    		var numCoords = 6;
-	    	var x1 = 400;
+    	var numCoords = 6;
+
+	    var x1 = 400;
 			var y1 = 20;
 
 			var x2 = 730;
@@ -179,15 +178,14 @@ stop = false;
 			var x6 = 70;
 			var y6 = 210;
 
-
 			if (centreDot == true) {
 				var x7 = 400;
 				var y7 = 400;
 			}
-		
-   		break;
+   	break;
+
     case "Heptagon":
-    		var numCoords = 7;
+    	var numCoords = 7;
 			var x1 = 400;
 			var y1 = 30;
 
@@ -213,10 +211,10 @@ stop = false;
 				var x8 = 400;
 				var y8 = 400;
 			}		
-		
-   		break;
+   	break;
+
     case "Octagon":
-    		var numCoords = 8;
+    	var numCoords = 8;
 			var x1 = 400;
 			var y1 = 20;
 
@@ -241,15 +239,15 @@ stop = false;
 			var x8 = 130;
 			var y8 = 130;
 
-
 			if (centreDot == true) {
 				var x9 = 400;
 				var y9 = 400;
 			}
-   		break;
+   	break;
+
     case "Nonagon":
-    		var numCoords = 9;
-    		var x1 = 400;
+    	var numCoords = 9;
+    	var x1 = 400;
 			var y1 = 20;
 
 			var x2 = 645;
@@ -279,16 +277,16 @@ stop = false;
 			var x10 = 400;
 			var y10 = 390;
 
-
 			if (centreDot == true) {
 				var x11 = 400;
 				var y11 = 400;
 			}
+   	break;
 
-   		break;
     case "Decagon":
-    		var numCoords = 10;
-    		var x1 = 400;
+    	var numCoords = 10;
+
+    	var x1 = 400;
 			var y1 = 20;
 
 			var x2 = 625;
@@ -317,17 +315,16 @@ stop = false;
 
 			var x10 = 177;
 			var y10 = 93;
-
 
 			if (centreDot == true) {
 				var x11 = 400;
 				var y11 = 400;
 			}
-	
-   		break;
+		break;
+
     case "Hendecagon":
-    		var numCoords = 11;
-    		var x1 = 400;
+    	var numCoords = 11;
+    	var x1 = 400;
 			var y1 = 20;
 
 			var x2 = 625;
@@ -356,21 +353,19 @@ stop = false;
 
 			var x10 = 177;
 			var y10 = 93;
-
 
 			var x11 = 177;
 			var y11 = 93;
-
 
 			if (centreDot == true) {
 				var x12 = 400;
 				var y12 = 400;
 			}
-	
-   		break;
+   	break;
+
     case "Dodecagon":
-    		var numCoords = 12;
-    		var x1 = 400;
+    	var numCoords = 12;
+    	var x1 = 400;
 			var y1 = 20;
 
 			var x2 = 590;
@@ -378,7 +373,7 @@ stop = false;
 
 			var x3 = 730;
 			var y3 = 210;
-			//////
+
 			var x4 = 780;
 			var y4 = 400;
 
@@ -387,7 +382,7 @@ stop = false;
 
 			var x6 = 590;
 			var y6 = 730;
-			//////
+
 			var x7 = 400;
 			var y7 = 780;
 
@@ -396,7 +391,7 @@ stop = false;
 
 			var x9 = 70;
 			var y9 = 590;
-			///////
+
 			var x10 = 20;
 			var y10 = 400;
 
@@ -406,12 +401,10 @@ stop = false;
 			var x12 = 210;
 			var y12 = 70;
 
-
 			if (centreDot == true) {
 				var x13 = 400;
 				var y13 = 400;
 			}
-
    		break;
 	}
 
@@ -427,6 +420,8 @@ stop = false;
 	var newX = randX;
 	var newY = randY;
 
+	var d = 2; // divide by
+
 	// this is used for drawing lines it needs a start position to draw from
 	ctx.moveTo(randX, randY);
 
@@ -438,80 +433,80 @@ stop = false;
 
 			switch(randNum) {
 		    case 1:
-		        x = (newX + x1) / 2;
-		        y = (newY + y1) / 2;
+		        x = (newX + x1) / d;
+		        y = (newY + y1) / d;
 		        fillColor =   pointColors[0];
 		        strokeColor =   pointColors[0];
 		        break;
 		    case 2:
-		    	x = (newX + x2) / 2;
-		        y = (newY + y2) / 2;
+		    	x = (newX + x2) / d;
+		        y = (newY + y2) / d;
 		        fillColor =   pointColors[1];
 		        strokeColor =   pointColors[1];
 		        break;
 		    case 3:
-		    	x = (newX + x3) / 2;
-		        y = (newY + y3) / 2;
+		    	x = (newX + x3) / d;
+		        y = (newY + y3) / d;
 		        fillColor =   pointColors[2];
 		        strokeColor =   pointColors[2];
 		   		break;
 		    case 4:
-		    	x = (newX + x4) / 2;
-		        y = (newY + y4) / 2;
+		    	x = (newX + x4) / d;
+		        y = (newY + y4) / d;
 		        fillColor =   pointColors[3];
 		        strokeColor =   pointColors[3];
 		   		break;
 		    case 5:
-		    	x = (newX + x5) / 2;
-		        y = (newY + y5) / 2;
+		    	x = (newX + x5) / d;
+		        y = (newY + y5) / d;
 		        fillColor =   pointColors[4];
 		        strokeColor =   pointColors[4];
 		   		break;
 		    case 6:
-		    	x = (newX + x6) / 2;
-		        y = (newY + y6) / 2;
+		    	x = (newX + x6) / d;
+		        y = (newY + y6) / d;
 		        fillColor =   pointColors[5];
 		        strokeColor =   pointColors[5];
 		   		break;
 		    case 7:
-		        x = (newX + x7) / 2;
-		        y = (newY + y7) / 2;
+		        x = (newX + x7) / d;
+		        y = (newY + y7) / d;
 		        fillColor =   pointColors[6];
 		        strokeColor =   pointColors[6];
 		        break;
 		    case 8:
-		    	x = (newX + x8) / 2;
-		        y = (newY + y8) / 2;
+		    	x = (newX + x8) / d;
+		        y = (newY + y8) / d;
 		        fillColor =   pointColors[7];
 		        strokeColor =   pointColors[7];
 		        break;
 		    case 9:
-		    	x = (newX + x9) / 2;
-		        y = (newY + y9) / 2;
+		    	x = (newX + x9) / d;
+		        y = (newY + y9) / d;
 		        fillColor =   pointColors[8];
 		        strokeColor =   pointColors[8];
 		   		break;
 		    case 10:
-		    	x = (newX + x10) / 2;
-		        y = (newY + y10) / 2;
+		    	x = (newX + x10) / d;
+		        y = (newY + y10) / d;
 		        fillColor =   pointColors[9];
 		        strokeColor =   pointColors[9];
 		   		break;
 		    case 11:
-		    	x = (newX + x11) / 2;
-		        y = (newY + y11) / 2;
+		    	x = (newX + x11) / d;
+		        y = (newY + y11) / d;
 		        fillColor =   pointColors[10];
 		        strokeColor =   pointColors[10];
 		   		break;
 		    case 12:
-		    	x = (newX + x12) / 2;
-		        y = (newY + y12) / 2;
+		    	x = (newX + x12) / d;
+		        y = (newY + y12) / d;
 		        fillColor =   pointColors[11];
 		        strokeColor =   pointColors[11];
 		   		break;
 		    case 13:
-		    	x = (newX + x13) / 2;
-		        y = (newY + y13) / 2;
+		    	x = (newX + x13) / d;
+		        y = (newY + y13) / d;
 		        fillColor =   pointColors[12];
 		        strokeColor =   pointColors[12];
 		   		break;
@@ -529,6 +524,10 @@ stop = false;
 				// it draws lines from point a to b not dots
 				// but it is more resource friendly for large calculations
 
+				ctx.beginPath();
+				ctx.lineWidth = sizeDots;
+
+
 				if (color == true) {
 					ctx.strokeStyle = strokeColor;
 					ctx.fillStyle = fillColor;
@@ -539,11 +538,9 @@ stop = false;
 				
 				}
 
-				ctx.beginPath();
 				ctx.moveTo(x, y);
-				ctx.lineTo(x+0.1,y+0.1);
+				ctx.lineTo(x+0.5,y+0.5);
 
-				ctx.lineWidth = sizeDots;
 				ctx.stroke();
 
 			} else {
