@@ -1,5 +1,4 @@
 <?php 
-
 ?>
 
 <!DOCTYPE html>
@@ -28,120 +27,106 @@
   		<div class="starter-template" style="padding: 0 !important">
 	        <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
 	        Sorry canvas not supported.
-			</canvas>
+					</canvas>
 	      	<div id="variableContainer">
 		      	<table style="width:100%">
 			        <colgroup>
 					    <col style=" width: 25%;">
 				  	</colgroup>
-				  		  <tr>
-					  <td  colspan="2"><input id="run"  type="button"   value="Run"  onclick="multiChaos();" /></td>
-					  <td  colspan="2"><input id="stop" type="button"   value="Stop" onclick="stopFunc();" /></td>
-					  </tr>
+					  	<tr>
+						  <td  colspan="2"><input id="run"  type="button"   value="Run"  onclick="multiChaos();" /></td>
+						  <td  colspan="2"><input id="stop" type="button"   value="Stop" onclick="stopFunc();" /></td>
+						  </tr>
+						  <tr>
+						    <td>Number: </td>
+						    <td><input id="number" type="number" value="100000" min="1" max="100000000"/></td>
+						    <td>Size: </td>
+						    <td><input id="size" type="number" value="1" min="0.0" max="10.0" step="0.01"/></td>
+						  </tr>
+						  <tr>
+						    <td>Opacity: </td>
+						    <td><input id="opacity" type="number" value="1" min="0.0" max="1.0" step="0.01"/></td>
+						    <td>Color: </td>
+						    <td><input id="color" type="checkbox" checked /></td>
+						  </tr>
+				  		<tr class="colors">
+						    <td>Color 1: </td>
+						    <td><input id="hex1" type="color" value="#ff0000" /></td>
+						    <td>Color 2: </td>
+						    <td><input id="hex2" type="color" value="#ff00ff" /></td>
+						  </tr>
+				  		<tr class="colors">
+						    <td>Color 3: </td>
+						    <td><input id="hex3" type="color" value="#0000ff" /></td>
+						    <td>Color 4: </td>
+						    <td><input id="hex4" type="color" value="#00ffff" /></td>
+						  </tr>
+						  <tr class="colors">
+						    <td>Color 5: </td>
+						    <td><input id="hex5" type="color" value="#00ff00" /></td>
+						    <td>Color 6: </td>
+						    <td><input id="hex6" type="color" value="#ffff00" /></td>
+						  </tr>
+		  		  	<tr class="colors">
+						    <td>Color 7: </td>
+						    <td><input id="hex7" type="color" value="#ff0000" /></td>
+						    <td>Color 8: </td>
+						    <td><input id="hex8" type="color" value="#ff00ff" /></td>
+						  </tr>
+				  		<tr class="colors">
+						    <td>Color 9: </td>
+						    <td><input id="hex9" type="color" value="#0000ff" /></td>
+						    <td>Color 10: </td>
+						    <td><input id="hex10" type="color" value="#00ffff" /></td>
+						  </tr>
+						  <tr class="colors">
+						    <td>Color 11: </td>
+						    <td><input id="hex11" type="color" value="#00ff00" /></td>
+						    <td>Color 12: </td>
+						    <td><input id="hex12" type="color" value="#ffff00" /></td>
+						  </tr>
 
-					  <tr>
-					    <td>Number: </td>
-					    <td><input id="number" type="number" value="100000" min="1" max="100000000"/></td>
-					    <td>Size: </td> 
-					    <td><input id="size" type="number" value="1" min="0.0" max="10.0" step="0.01"/></td>
-					  </tr>
-					  <tr>
-					    <td>Opacity: </td>
-					    <td><input id="opacity" type="number" value="1" min="0.0" max="1.0" step="0.01"/></td>
-					    <td>Color: </td>
-					    <td><input id="color" type="checkbox" checked /></td>
-					  </tr>
+	 					 <tr>
+						    <td>Shape: </td>
+						    <td><select id="shape" style="width: 100%;">
+							   	<option value="Circle"						>Circle</option>
+								  <option value="Triangle" selected >Triangle</option>
+								  <option value="Square"						>Square</option>
+								  <option value="Pentagon"					>Pentagon</option>
+								  <option value="Hexagon"						>Hexagon</option>
+							  	<option value="Heptagon"					>Heptagon</option>
+								  <option value="Octagon"						>Octagon</option>
+								  <option value="Nonagon"						>Nonagon</option>
+								  <option value="Decagon"						>Decagon</option>
+								  <option value="Hendecagon"				>Hendecagon</option>
+								  <option value="Dodecagon"					>Dodecagon</option>
+								</select></td>
+								<td>Center Dot: </td>
+								<td><input id="centerDot" type="checkbox" checked /></td>
+						  </tr>
 
-			  		  <tr class="colors">
-					    <td>Color 1: </td>
-					    <td><input id="hex1" type="color" value="#ff0000" /></td>
-					    <td>Color 2: </td>
-					    <td><input id="hex2" type="color" value="#ff00ff" /></td>
-					  </tr>
-			  		  <tr  class="colors">
-					    <td>Color 3: </td>
-					    <td><input id="hex3" type="color" value="#0000ff" /></td>
-					    <td>Color 4: </td>
-					    <td><input id="hex4" type="color" value="#00ffff" /></td>
-					  </tr>
-					  <tr  class="colors">
-					    <td>Color 5: </td>
-					    <td><input id="hex5" type="color" value="#00ff00" /></td>
-					    <td>Color 6: </td>
-					    <td><input id="hex6" type="color" value="#ffff00" /></td>
-					  </tr>
-
-	  		  		  <tr class="colors">
-					    <td>Color 7: </td>
-					    <td><input id="hex7" type="color" value="#ff0000" /></td>
-					    <td>Color 8: </td>
-					    <td><input id="hex8" type="color" value="#ff00ff" /></td>
-					  </tr>
-			  		  <tr  class="colors">
-					    <td>Color 9: </td>
-					    <td><input id="hex9" type="color" value="#0000ff" /></td>
-					    <td>Color 10: </td>
-					    <td><input id="hex10" type="color" value="#00ffff" /></td>
-					  </tr>
-					  <tr  class="colors">
-					    <td>Color 11: </td>
-					    <td><input id="hex11" type="color" value="#00ff00" /></td>
-					    <td>Color 12: </td>
-					    <td><input id="hex12" type="color" value="#ffff00" /></td>
-					  </tr>
-
- 					 <tr>
-					    <td>Shape: </td>
-					    <td><select id="shape" style="width: 100%;">
-					   	  <option value="Circle">Circle</option>
-						  <option value="Triangle" selected>Triangle</option>
-						  <option value="Square">Square</option>
-						  <option value="Pentagon">Pentagon</option>
-						  <option value="Hexagon">Hexagon</option>
-
-					  	  <option value="Heptagon">Heptagon</option>
-						  <option value="Octagon">Octagon</option>
-						  <option value="Nonagon">Nonagon</option>
-						  <option value="Decagon">Decagon</option>
-						  <option value="Hendecagon">Hendecagon</option>
-						  <option value="Dodecagon">Dodecagon</option>
-						</select></td>
-						<td>Center Dot: </td>
-						<td><input id="centerDot" type="checkbox" checked /></td>
-					  </tr>
-
-					  <tr>
-					 	<td>File Name: </td>
-					    <td><input id="fileName" type="text" placeholder="filename"/></td>
-					    <td><select id="fileType">
-						  <option >jpeg</option>
-						  <option value=".png">png</option>
-						  <option value=".gif">gif</option>
-						</select></td>
-					    <td  colspan="2"><a id="download" download="triangle.png"><button type="button" onClick="download()">Download</button></a></td>
-					  </tr>
-  				
-				
-				</table>
-				<br>
-
-				
-
-				<br>
-
-				
-
-	      	</div>
+						  <tr>
+						 	<td>File Name: </td>
+						    <td><input id="fileName" type="text" placeholder="filename"/></td>
+						    <td><select id="fileType">
+							  	<option >jpeg</option>
+							  	<option value=".png">png</option>
+							  	<option value=".gif">gif</option>
+								</select></td>
+						    <td  colspan="2"><a id="download" download="triangle.png"><button type="button" onClick="download()">Download</button></a></td>
+						  </tr>
+					</table><br><br>
+	      </div>
 		</div>
-
 	</div>
  
 	
-  	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 </body>
+
 <script type="text/javascript">
 
 
