@@ -11,7 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="css/cover.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -19,11 +18,9 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-    </nav>
+  </nav>
 
     <div class="container">
-
   		<div class="starter-template" style="padding: 0 !important">
 	        <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
 	        Sorry canvas not supported.
@@ -85,28 +82,28 @@
 						    <td>Color 12: </td>
 						    <td><input id="hex12" type="color" value="#ffff00" /></td>
 						  </tr>
-
 	 					 <tr>
 						    <td>Shape: </td>
-						    <td><select id="shape" style="width: 100%;">
-							   	<option value="Circle"						>Circle</option>
-								  <option value="Triangle" selected >Triangle</option>
-								  <option value="Square"						>Square</option>
-								  <option value="Pentagon"					>Pentagon</option>
-								  <option value="Hexagon"						>Hexagon</option>
-							  	<option value="Heptagon"					>Heptagon</option>
-								  <option value="Octagon"						>Octagon</option>
-								  <option value="Nonagon"						>Nonagon</option>
-								  <option value="Decagon"						>Decagon</option>
-								  <option value="Hendecagon"				>Hendecagon</option>
-								  <option value="Dodecagon"					>Dodecagon</option>
-								</select></td>
+						    <td>
+						    	<select id="shape" style="width: 100%;">
+								   	<option value="Circle"						>Circle</option>
+									  <option value="Triangle" selected >Triangle</option>
+									  <option value="Square"						>Square</option>
+									  <option value="Pentagon"					>Pentagon</option>
+									  <option value="Hexagon"						>Hexagon</option>
+								  	<option value="Heptagon"					>Heptagon</option>
+									  <option value="Octagon"						>Octagon</option>
+									  <option value="Nonagon"						>Nonagon</option>
+									  <option value="Decagon"						>Decagon</option>
+									  <option value="Hendecagon"				>Hendecagon</option>
+									  <option value="Dodecagon"					>Dodecagon</option>
+									</select>
+								</td>
 								<td>Center Dot: </td>
 								<td><input id="centerDot" type="checkbox" checked /></td>
 						  </tr>
-
 						  <tr>
-						 	<td>File Name: </td>
+							 	<td>File Name: </td>
 						    <td><input id="fileName" type="text" placeholder="filename"/></td>
 						    <td><select id="fileType">
 							  	<option >jpeg</option>
@@ -114,12 +111,11 @@
 							  	<option value=".gif">gif</option>
 								</select></td>
 						    <td  colspan="2"><a id="download" download="triangle.png"><button type="button" onClick="download()">Download</button></a></td>
-						  </tr>
+						 </tr>
 					</table><br><br>
 	      </div>
 		</div>
 	</div>
- 
 	
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -132,15 +128,15 @@
 
 		//uniChaos();
 		//dualChaos();
-		 //triangleChaos(); 
+		//triangleChaos();
 		// funChaos();
-		 //squareChaos(); 
+		//squareChaos();
 		// starChaos();
-		 //hexChaos();
+		//hexChaos();
 		//septChaos();
-		 //octChaos();
-		 //ninChaos();
-		 //decChaos();
+		//octChaos();
+		//ninChaos();
+		//decChaos();
 		//elevChaos();
 		//twelvChaos();
 
