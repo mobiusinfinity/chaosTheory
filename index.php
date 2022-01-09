@@ -16,7 +16,7 @@
 </head>
 <body>
  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Chaos Theory</a>
+      <a class="navbar-brand" href="#" style="float: auto;">Chaos Theory</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,11 +25,7 @@
 
     <div class="container">
 
-  		<div class="starter-template">
-	        <h1>Chaos Theory</h1>
-	        <p class="lead">Create Chaos...</p>
-
-
+  		<div class="starter-template" style="padding: 0 !important">
 	        <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
 	        Sorry canvas not supported.
 			</canvas>
