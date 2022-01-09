@@ -82,11 +82,11 @@ stop = false;
     case "Circle":
 
   		var numCoords = 2;
-			var x1 = 400;
+			var x1 = 0;
 			var y1 = 0;
 
 			if (centreDot == true) {
-				var x2 = 400;
+				var x2 = 800;
 				var y2 = 800;
 			}
     break;
