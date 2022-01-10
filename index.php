@@ -19,8 +19,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
   </nav>
-
     <div class="container">
+    	<!-- <h1 id="mainHeading">mouse position</h1> -->
   		<div class="starter-template" style="padding: 0 !important">
 	        <canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
 	        Sorry canvas not supported.
@@ -31,9 +31,13 @@
 					    <col style=" width: 25%;">
 				  	</colgroup>
 					  	<tr>
-						  <td  colspan="2"><input id="run"  type="button"   value="Run"  onclick="multiChaos();" /></td>
-						  <td  colspan="2"><input id="stop" type="button"   value="Stop" onclick="stopFunc();" /></td>
+						  	<td colspan="2"><input id="run"  	type="button" value="Run"  	onclick="multiChaos();" /></td>
+						  	<td colspan="2"><input id="Pause" type="button" value="Pause" onclick="pausedFunc();" /></td>
 						  </tr>
+				    	<tr>
+				  	  	<td colspan="2"><input id="stop" 	type="button" value="Stop"	onclick="stopFunc();" 	/></td>
+				  	  	<td colspan="2"><input id="clear" type="button" value="Clear" onclick="clearChaos();" /></td>
+				  	  </tr>
 						  <tr>
 						    <td>Number: </td>
 						    <td><input id="number" type="number" value="100000" min="1" max="100000000"/></td>
@@ -48,15 +52,15 @@
 						  </tr>
 				  		<tr class="colors">
 						    <td>Color 1: </td>
-						    <td><input id="hex1" type="color" value="#ff0000" /></td>
+						    <td><input id="hex1" type="color" value="#ffff00" /></td>
 						    <td>Color 2: </td>
 						    <td><input id="hex2" type="color" value="#ff00ff" /></td>
 						  </tr>
 				  		<tr class="colors">
 						    <td>Color 3: </td>
-						    <td><input id="hex3" type="color" value="#0000ff" /></td>
+						    <td><input id="hex3" type="color" value="#00ffff" /></td>
 						    <td>Color 4: </td>
-						    <td><input id="hex4" type="color" value="#00ffff" /></td>
+						    <td><input id="hex4" type="color" value="#00ff00" /></td>
 						  </tr>
 						  <tr class="colors">
 						    <td>Color 5: </td>
@@ -82,7 +86,7 @@
 						    <td>Color 12: </td>
 						    <td><input id="hex12" type="color" value="#ffff00" /></td>
 						  </tr>
-	 					 <tr>
+	 					  <tr>
 						    <td>Shape: </td>
 						    <td>
 						    	<select id="shape" style="width: 100%;">
@@ -105,11 +109,13 @@
 						  <tr>
 							 	<td>File Name: </td>
 						    <td><input id="fileName" type="text" placeholder="filename"/></td>
-						    <td><select id="fileType">
-							  	<option >jpeg</option>
-							  	<option value=".png">png</option>
-							  	<option value=".gif">gif</option>
-								</select></td>
+						    <td>
+						    	<select id="fileType">
+							  		<option >jpeg</option>
+							  		<option value=".png">png</option>
+							  		<option value=".gif">gif</option>
+									</select>
+								</td>
 						    <td  colspan="2"><a id="download" download="triangle.png"><button type="button" onClick="download()">Download</button></a></td>
 						 </tr>
 					</table><br><br>
@@ -125,129 +131,123 @@
 
 <script type="text/javascript">
 
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
 
-		//uniChaos();
-		//dualChaos();
-		//triangleChaos();
-		// funChaos();
-		//squareChaos();
-		// starChaos();
-		//hexChaos();
-		//septChaos();
-		//octChaos();
-		//ninChaos();
-		//decChaos();
-		//elevChaos();
-		//twelvChaos();
+		function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
+		  if (sides < 3) return;
+		  var a = (Math.PI * 2)/sides;
+		  var X = [];
+		  var Y = [];
+		  a = anticlockwise?-a:a;
+		  ctx.save();
+		  ctx.translate(x,y);
+		  ctx.rotate(startAngle);
+		  ctx.moveTo(radius,0);
+		  for (var i = 1; i < sides; i++) {
+		    ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
+		    X.push(radius*Math.cos(a*i));
+		    Y.push(radius*Math.sin(a*i));
+		  }
+		  ctx.closePath();
+		  ctx.restore();
 
+		  // return X;
 
+		  for(var i = 0; i < X.length; i++){
+		  	console.log(X[i]);
+		  	console.log(Y[i]);
+		  }
+		}
 
-		// function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
-		//   if (sides < 3) return;
-		//   var a = (Math.PI * 2)/sides;
-		//   a = anticlockwise?-a:a;
-		//   ctx.save();
-		//   ctx.translate(x,y);
-		//   ctx.rotate(startAngle);
-		//   ctx.moveTo(radius,0);
-		//   for (var i = 1; i < sides; i++) {
-		//     ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
-		//   }
-		//   ctx.closePath();
-		//   ctx.restore();
-		// }
+		//       function writeMessage(canvas, message) {
+		//         var context = canvas.getContext('2d');
+		//         context.clearRect(0, 0, canvas.width, canvas.height);
+		//         context.font = '18pt Calibri';
+		//         context.fillStyle = 'black';
+		//         context.fillText(message, 10, 25);
+		//       }
+		//       function getMousePos(canvas, evt) {
+		//         var rect = canvas.getBoundingClientRect();
+		//         return {
+		//           x: evt.clientX - rect.left,
+		//           y: evt.clientY - rect.top
+		//         };
+		//       }
+		//       var canvas = document.getElementById('myCanvas');
+		//       var context = canvas.getContext('2d');
 
-		 //      function writeMessage(canvas, message) {
-		 //        var context = canvas.getContext('2d');
-		 //        context.clearRect(0, 0, canvas.width, canvas.height);
-		 //        context.font = '18pt Calibri';
-		 //        context.fillStyle = 'black';
-		 //        context.fillText(message, 10, 25);
-		 //      }
-		 //      function getMousePos(canvas, evt) {
-		 //        var rect = canvas.getBoundingClientRect();
-		 //        return {
-		 //          x: evt.clientX - rect.left,
-		 //          y: evt.clientY - rect.top
-		 //        };
-		 //      }
-		 //      var canvas = document.getElementById('myCanvas');
-		 //      var context = canvas.getContext('2d');
+		//       canvas.addEventListener('mousemove', function(evt) {
+		//         var mousePos = getMousePos(canvas, evt);
+		//         document.getElementById("mainHeading").innerHTML = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+		//         // console.log('Mouse position: ' + mousePos.x + ',' + mousePos.y);
+		//         //writeMessage(canvas, message);
+		//       }, false);
 
-		 //      canvas.addEventListener('mousemove', function(evt) {
-		 //        var mousePos = getMousePos(canvas, evt);
-		 //        document.getElementById("mainHeading").innerHTML = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-		 //        // console.log('Mouse position: ' + mousePos.x + ',' + mousePos.y);
-		 //        //writeMessage(canvas, message);
-		 //      }, false);
+		/// triangleChaos();
+		// triangle
+    ctx.beginPath();
+		polygon(ctx,400,500,450,3,-Math.PI/2);
+		ctx.fillStyle="rgba(255,255,255,1)";
+		ctx.strokeStyle = "rgba(255,255,255,1)";
+		// ctx.fill();
+		ctx.stroke();
 
+		// // pentagon
+  //   ctx.beginPath();
+		// polygon(ctx,400,430,400,5,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,11,93,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
 
+		// //hexagon
+  //   ctx.beginPath();
+		// polygon(ctx,400,400,380,6,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,0,0,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
 
-
-
-		///// triangleChaos(); 
-		  //    //// triangle
-		  //       ctx.beginPath();
-				// polygon(ctx,400,500,450,3,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,11,93,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
-
-
-		//// pentagon
-		  //       ctx.beginPath();
-				// polygon(ctx,400,430,400,5,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,11,93,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
-
-		////hexagon
-		  //       ctx.beginPath();
-				// polygon(ctx,400,400,380,6,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,0,0,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
-
-		////septagon
-		  //       ctx.beginPath();
-				// polygon(ctx,400,420,390,7,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,0,0,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
+		// //septagon
+  //   ctx.beginPath();
+		// polygon(ctx,400,420,390,7,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,0,0,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
 
 		// // octagon
-		  //      ctx.beginPath();
-				// polygon(ctx,400,400,380,8,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,0,0,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
+  //   ctx.beginPath();
+		// polygon(ctx,400,400,380,8,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,0,0,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
 
 		// // nineagon
-		  //       ctx.beginPath();
-				// polygon(ctx,400,400,380,9,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,0,0,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
+  //   ctx.beginPath();
+		// polygon(ctx,400,400,380,9,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,0,0,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
 
-		//// decagon
-		  //       ctx.beginPath();
-				// polygon(ctx,400,400,380,10,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,0,0,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
+		// // decagon
+  //   ctx.beginPath();
+		// polygon(ctx,400,400,380,10,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,0,0,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
+
 		// //elevengon
-		  //       ctx.beginPath();
-				// polygon(ctx,400,400,380,10,-Math.PI/2);
-				// ctx.fillStyle="rgba(227,0,0,0.75)";
-				// ctx.fill();
-				// ctx.stroke();
+  //   ctx.beginPath();
+		// polygon(ctx,400,400,380,10,-Math.PI/2);
+		// ctx.fillStyle="rgba(227,0,0,0.75)";
+		// ctx.fill();
+		// ctx.stroke();
 
-		//// twelevgon
-		  //       ctx.beginPath();
-				// polygon(ctx,400,400,380,12,-Math.PI/2);
-				// ctx.fillStyle="rgba(200,100,0,1)";
-				// ctx.fill();
-				// ctx.stroke();
+		// // twelevgon
+  //   ctx.beginPath();
+		// polygon(ctx,400,400,380,12,-Math.PI/2);
+		// ctx.fillStyle="rgba(200,100,0,1)";
+		// ctx.fill();
+		// ctx.stroke();
 
 </script>
 

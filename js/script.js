@@ -9,9 +9,9 @@ stop = false;
 
 	// This just Sets the background to black at the begining of the function
 	// This also acts as a way to clear the screen
-	var fillColor = "black";
-	ctx.fillStyle = "black";
-	ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
+	// var fillColor = "black";
+	// ctx.fillStyle = "black";
+	// ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
 
 	// numCoords is the amount of coordinate points there are for that shape chosen
 	var numCoords = 3;
@@ -435,81 +435,81 @@ stop = false;
 		    case 1:
 		        x = (newX + x1) / d;
 		        y = (newY + y1) / d;
-		        fillColor =   pointColors[0];
+		        fillColor 	=   pointColors[0];
 		        strokeColor =   pointColors[0];
 		        break;
 		    case 2:
-		    	x = (newX + x2) / d;
+		    		x = (newX + x2) / d;
 		        y = (newY + y2) / d;
-		        fillColor =   pointColors[1];
+		        fillColor 	=   pointColors[1];
 		        strokeColor =   pointColors[1];
-		        break;
+		    break;
 		    case 3:
-		    	x = (newX + x3) / d;
+		    		x = (newX + x3) / d;
 		        y = (newY + y3) / d;
-		        fillColor =   pointColors[2];
+		        fillColor 	=   pointColors[2];
 		        strokeColor =   pointColors[2];
-		   		break;
+		   	break;
 		    case 4:
-		    	x = (newX + x4) / d;
+		    		x = (newX + x4) / d;
 		        y = (newY + y4) / d;
-		        fillColor =   pointColors[3];
+		        fillColor 	=   pointColors[3];
 		        strokeColor =   pointColors[3];
-		   		break;
+		   	break;
 		    case 5:
-		    	x = (newX + x5) / d;
+		    		x = (newX + x5) / d;
 		        y = (newY + y5) / d;
-		        fillColor =   pointColors[4];
+		        fillColor 	=   pointColors[4];
 		        strokeColor =   pointColors[4];
-		   		break;
+		   	break;
 		    case 6:
-		    	x = (newX + x6) / d;
+		    		x = (newX + x6) / d;
 		        y = (newY + y6) / d;
-		        fillColor =   pointColors[5];
+		        fillColor 	=   pointColors[5];
 		        strokeColor =   pointColors[5];
-		   		break;
+		   	break;
 		    case 7:
 		        x = (newX + x7) / d;
 		        y = (newY + y7) / d;
-		        fillColor =   pointColors[6];
+		        fillColor 	=   pointColors[6];
 		        strokeColor =   pointColors[6];
-		        break;
+		    break;
 		    case 8:
-		    	x = (newX + x8) / d;
+		    		x = (newX + x8) / d;
 		        y = (newY + y8) / d;
-		        fillColor =   pointColors[7];
+		        fillColor 	=   pointColors[7];
 		        strokeColor =   pointColors[7];
-		        break;
+		    break;
 		    case 9:
-		    	x = (newX + x9) / d;
+		    		x = (newX + x9) / d;
 		        y = (newY + y9) / d;
-		        fillColor =   pointColors[8];
+		        fillColor 	=   pointColors[8];
 		        strokeColor =   pointColors[8];
-		   		break;
+		   	break;
 		    case 10:
-		    	x = (newX + x10) / d;
+		    		x = (newX + x10) / d;
 		        y = (newY + y10) / d;
-		        fillColor =   pointColors[9];
+		        fillColor 	=   pointColors[9];
 		        strokeColor =   pointColors[9];
-		   		break;
+		   	break;
 		    case 11:
-		    	x = (newX + x11) / d;
+		    		x = (newX + x11) / d;
 		        y = (newY + y11) / d;
-		        fillColor =   pointColors[10];
+		        fillColor 	=   pointColors[10];
 		        strokeColor =   pointColors[10];
-		   		break;
+		   	break;
 		    case 12:
-		    	x = (newX + x12) / d;
+		    		x = (newX + x12) / d;
 		        y = (newY + y12) / d;
-		        fillColor =   pointColors[11];
+		        fillColor 	=   pointColors[11];
 		        strokeColor =   pointColors[11];
-		   		break;
+		   	break;
 		    case 13:
-		    	x = (newX + x13) / d;
-		        y = (newY + y13) / d;
-		        fillColor =   pointColors[12];
-		        strokeColor =   pointColors[12];
-		   		break;
+		    		x = (newX + x13) / d;
+		      	y = (newY + y13) / d;
+		      	fillColor 	=   pointColors[12];
+		      	strokeColor =   pointColors[12];
+		   	break;
 			}
 
 			x = Math.round(x);
@@ -518,7 +518,8 @@ stop = false;
 			newX = x;
 			newY = y;
 
-			if (sizeDots < 1) {
+			if (sizeDots < 0.01) {
+			//if (sizeDots < 1) { // original
 
 				// use this code to draw small dots less than 1px
 				// it draws lines from point a to b not dots
@@ -535,7 +536,6 @@ stop = false;
 				} else {
 					ctx.strokeStyle = "rgba(255,255,255," + alpha +")";
 					ctx.fillStyle = "rgba(255,255,255," + alpha +")";
-				
 				}
 
 				ctx.moveTo(x, y);
@@ -544,6 +544,7 @@ stop = false;
 				ctx.stroke();
 
 			} else {
+				ctx.lineWidth = sizeDots;
 
 				//Use this code to draw circles - better for big dots, more resourse intensive
 				ctx.beginPath();
@@ -561,11 +562,10 @@ stop = false;
 				}
 
 				ctx.fill();
-				//ctx.save();
-
-			}
-
+				ctx.save();
 		}
+
+	}
 
 		drawDots();
 		setInterval(drawDots, 0.1);
@@ -582,54 +582,49 @@ function stopFunc() {
 
 	window.onload =  function onloadFunction() {
 
-		var c = document.getElementById("myCanvas");
-		var ctx = c.getContext("2d");
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
 
-		// get the text from input box from user for filename
-		var fileName = document.getElementById("download").download;
+	// get the text from input box from user for filename
+	var fileName = document.getElementById("download").download;
 
-		// get the option from select drop down for filetype from use
-		var fileType = document.getElementById("fileType");
-		var type = fileType.options[fileType.selectedIndex].value;
+	// get the option from select drop down for filetype from use
+	var fileType = document.getElementById("fileType");
+	var type = fileType.options[fileType.selectedIndex].value;
 
-		var shapes = document.getElementById("shape");
-		var shape = shapes.options[shapes.selectedIndex].value;
+	var shapes = document.getElementById("shape");
+	var shape = shapes.options[shapes.selectedIndex].value;
 
-		fileName = shape + type;
+	fileName = shape + type;
 
-
-
-		document.getElementById('download').addEventListener('click', function() {
-		    save(this);
-		}, false);
+	document.getElementById('download').addEventListener('click', function() {
+	    save(this);
+	}, false);
 
 
+	function save(link) {
+
+	// get the text from input box from user for filename
+	var fileName = document.getElementById("fileName").value;
+	var download = document.getElementById("download");
 
 
-		function save(link) {
+	// get the option from select drop down for filetype from use
+	var fileType = document.getElementById("fileType");
+	var type = fileType.options[fileType.selectedIndex].value;
 
-		// get the text from input box from user for filename
-		var fileName = document.getElementById("fileName").value;
-		var download = document.getElementById("download");
+	var shapes = document.getElementById("shape");
+	var shape = shapes.options[shapes.selectedIndex].value;
 
+	if (!fileName) {
+		download.download = shape + "." + type;
+	} else {
+		download.download = fileName + "." + type;
+	}
 
-		// get the option from select drop down for filetype from use
-		var fileType = document.getElementById("fileType");
-		var type = fileType.options[fileType.selectedIndex].value;
-
-		var shapes = document.getElementById("shape");
-		var shape = shapes.options[shapes.selectedIndex].value;
-
-		if (!fileName) {
-			download.download = shape + "." + type;
-		} else {
-			download.download = fileName + "." + type;
-		}
-
-		
-			var save = document.getElementById("save");
-			var image = document.getElementById("myCanvas").toDataURL("image/png")
-                .replace("image/" + type + "", "image/octet-stream");
-		    download.setAttribute("href", image);
-		};
+	var save = document.getElementById("save");
+	var image = document.getElementById("myCanvas").toDataURL("image/png")
+              .replace("image/" + type + "", "image/octet-stream");
+	download.setAttribute("href", image);
+	};
 };
