@@ -27,17 +27,15 @@ stop = false;
 	/////// var numPoints = document.getElementById("points").value;
 
 
-	var hex1 = document.getElementById("hex1").value;
-	var hex2 = document.getElementById("hex2").value;
-	var hex3 = document.getElementById("hex3").value;
-	var hex4 = document.getElementById("hex4").value;
-	var hex5 = document.getElementById("hex5").value;
-	var hex6 = document.getElementById("hex6").value;
-
-
-	var hex7 = document.getElementById("hex7").value;
-	var hex8 = document.getElementById("hex8").value;
-	var hex9 = document.getElementById("hex9").value;
+	var hex1  = document.getElementById("hex1" ).value;
+	var hex2  = document.getElementById("hex2" ).value;
+	var hex3  = document.getElementById("hex3" ).value;
+	var hex4  = document.getElementById("hex4" ).value;
+	var hex5  = document.getElementById("hex5" ).value;
+	var hex6  = document.getElementById("hex6" ).value;
+	var hex7  = document.getElementById("hex7" ).value;
+	var hex8  = document.getElementById("hex8" ).value;
+	var hex9  = document.getElementById("hex9" ).value;
 	var hex10 = document.getElementById("hex10").value;
 	var hex11 = document.getElementById("hex11").value;
 	var hex12 = document.getElementById("hex12").value;
@@ -60,20 +58,20 @@ stop = false;
 
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
-		for(var i = 0; i < hexColors.length; i++) {
+	for(var i = 0; i < hexColors.length; i++) {
 
-	    hexColors[i] = hexColors[i].replace(shorthandRegex, function(m, r, g, b) {
-	        return r + r + g + g + b + b;
-	    });
+    hexColors[i] = hexColors[i].replace(shorthandRegex, function(m, r, g, b) {
+        return r + r + g + g + b + b;
+    });
 
-	    result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColors[i]);
-	    // return result ? {
-       r[i] = parseInt(result[1], 16);
-       g[i] = parseInt(result[2], 16);
-       b[i] = parseInt(result[3], 16);
+    result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColors[i]);
+    // return result ? {
+     r[i] = parseInt(result[1], 16);
+     g[i] = parseInt(result[2], 16);
+     b[i] = parseInt(result[3], 16);
 
-       pointColors[i]  = "rgba(" + r[i] +"," + g[i] +"," + b[i] +"," + alpha +")";
-    }
+     pointColors[i]  = "rgba(" + r[i] +"," + g[i] +"," + b[i] +"," + alpha +")";
+  }
 
 	var numCoords;
 
@@ -518,7 +516,7 @@ stop = false;
 			newX = x;
 			newY = y;
 
-			if (sizeDots < 0.01) {
+			if (sizeDots < 0.21) {
 			//if (sizeDots < 1) { // original
 
 				// use this code to draw small dots less than 1px
@@ -577,10 +575,21 @@ function stopFunc() {
  stop = true;
 };
 
+function pauseFunc() {
+ stop = true;
+};
+
+function clearFunc() {
+ if (stop == true) {
+ 	ctx.clearRect(0,0,800,800);
+ 	console.log("cleared canvas");
+ }
+};
+
 
 /////setInterval(multiChaos, 100000)
 
-	window.onload =  function onloadFunction() {
+window.onload =  function onloadFunction() {
 
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");

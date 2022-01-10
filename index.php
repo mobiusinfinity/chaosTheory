@@ -32,17 +32,17 @@
 				  	</colgroup>
 					  	<tr>
 						  	<td colspan="2"><input id="run"  	type="button" value="Run"  	onclick="multiChaos();" /></td>
-						  	<td colspan="2"><input id="Pause" type="button" value="Pause" onclick="pausedFunc();" /></td>
+						  	<td colspan="2"><input id="Pause" type="button" value="Pause" onclick="pauseFunc();" /></td>
 						  </tr>
 				    	<tr>
 				  	  	<td colspan="2"><input id="stop" 	type="button" value="Stop"	onclick="stopFunc();" 	/></td>
-				  	  	<td colspan="2"><input id="clear" type="button" value="Clear" onclick="clearChaos();" /></td>
+				  	  	<td colspan="2"><input id="clear" type="button" value="Clear" onclick="clearFunc();" /></td>
 				  	  </tr>
 						  <tr>
 						    <td>Number: </td>
 						    <td><input id="number" type="number" value="100000" min="1" max="100000000"/></td>
 						    <td>Size: </td>
-						    <td><input id="size" type="number" value="1" min="0.0" max="10.0" step="0.01"/></td>
+						    <td><input id="size" type="number" value="0.5" min="0.0" max="10.0" step="0.01"/></td>
 						  </tr>
 						  <tr>
 						    <td>Opacity: </td>
@@ -104,7 +104,7 @@
 									</select>
 								</td>
 								<td>Center Dot: </td>
-								<td><input id="centerDot" type="checkbox" checked /></td>
+								<td><input id="centerDot" type="checkbox" unchecked /></td>
 						  </tr>
 						  <tr>
 							 	<td>File Name: </td>
